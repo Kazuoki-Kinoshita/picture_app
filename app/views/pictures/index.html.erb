@@ -13,6 +13,7 @@
     <td><%= picture.image %></p></td>
     <td><%= link_to "詳細を確認する", picture_path(picture.id) %></td>
     <td><%= link_to "投稿を編集する", edit_picture_path(picture.id) %></td>
+    <td><%= link_to "投稿を削除する", picture_path(picture.id), method: :delete %></td>
   </tr>
 <% end %>
 </table>

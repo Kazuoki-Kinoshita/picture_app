@@ -10,6 +10,7 @@
   <tr>
     <td><%= picture.content %></p></td>
     <td><%= picture.image %></p></td>
+    <td><%= link_to "詳細", picture_path(picture.id) %></td>
   </tr>
 <% end %>
 </table>

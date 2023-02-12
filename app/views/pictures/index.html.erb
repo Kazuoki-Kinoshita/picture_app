@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <th>内容</th>
+    <th>文章</th>
     <th>画像</th>
     <th>投稿者</th>
   </tr>
@@ -10,7 +10,7 @@
 <% @pictures.each do |picture| %>
   <tr>
     <td><%= picture.content %></p></td>
-    <td><%= picture.image %></p></td>
+    <td><%= image_tag(picture.image.url) %></p></td>
     <td><%= picture.user.name %></p></td>
     <td><%= link_to "詳細を確認する", picture_path(picture.id) %></td>
     <td><%= link_to "投稿を編集する", edit_picture_path(picture.id), data: { confirm: "本当に編集していいですか？" }%></td>

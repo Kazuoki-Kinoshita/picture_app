@@ -1,6 +1,4 @@
 <h1>投稿詳細</h1>
 
 <p>内容：<%= @picture.content %></p>
-<p>画像：<%= @picture.image %></p>
-
-
+<p>画像：<%= image_tag @picture.image.url %></p>

@@ -10,14 +10,12 @@ class PicturesController < ApplicationController
   end
 
   def confirm
-    @picture = Picture.new(picture_params)
-    @picture.user_id = current_user.id
+    @picture = current_user.pictures.build(picture_params)
     render :new if @picture.invalid?
   end
   
   def create
-    @picture = Picture.new(picture_params)
-    @picture.user_id = current_user.id
+    @picture = current_user.pictures.build(picture_params)
     if params[:back]
       render :new
     else 

@@ -8,13 +8,22 @@ class PicturesController < ApplicationController
   def new
     @picture = Picture.new
   end
+
+  def confirm
+    @picture = Picture.new(picture_params)
+    render :new if @picture.invalid?
+  end
   
   def create
     @picture = Picture.new(picture_params)
-    if @picture.save
-      redirect_to  pictures_path, notice: "投稿作成しました！"
-    else
+    if params[:back]
       render :new
+    else 
+      if @picture.save
+        redirect_to  pictures_path, notice: "投稿作成しました！"
+      else
+        render :new
+      end
     end
   end
 

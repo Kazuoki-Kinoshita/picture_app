@@ -1,7 +1,7 @@
 <%= form_with(scope: :session, url: sessions_path, local:true) do |form| %>
-  <%= form.label :email %>
-  <%= form.email_field :email %></br>
-  <%= form.label :password %>
-  <%= form.password_field :password %></br>
-  <%= form.submit "ログイン" %>
+  <p><%= form.label :email %></p>
+  <p><%= form.email_field :email %></p>
+  <p><%= form.label :password %></p>
+  <p><%= form.password_field :password %></p>
+  <p><%= form.submit "ログイン" %></p>
 <% end %>

@@ -1,7 +1,7 @@
 <%= form_with(model: @picture, local: true, url: choose_new_or_edit )  do |form| %>
   <% if @picture.errors.any? %>
     <div id = "error_explanation" >
-      <h2><%= @picture.errors.count %>件あります</h2>
+      <h2><%= @picture.errors.count %>件エラーがあります</h2>
       <ul>
       <% @picture.errors.full_messages.each do |massage| %>
         <li><%= massage %></li>
@@ -11,15 +11,15 @@
   <% end %>
 
   <div class = "picture_content" > 
-    <%= form.label :content %>
-    <%= form.text_field :content %><br/>
+    <p><%= form.label :content %>
+    <%= form.text_field :content %></p>
   </div>
   <div class = "picture_image" > 
-  <%= form.label :image %>
-  <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
-  <%= form.file_field :image %>
-  <%= form.hidden_field :image_cache %>
+    <p><%= form.label :image %>
+    <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
+    <%= form.file_field :image %>
+    <%= form.hidden_field :image_cache %></p>
   </div>
-  <%= form.submit %>
+  <p><%= form.submit %></p>
 <% end %>
 <%= link_to "投稿一覧画面に戻る", pictures_path %>
